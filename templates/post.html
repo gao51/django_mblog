@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>欢迎光临我的博客</title>
 </head>
-<body>
-<h1>欢迎光临我的博客</h1>
+<p>
+<h1>{{ post.title }}</h1>
 <hr>
 {#{{post_lists}}#}
-{% for post in posts %}
-<p style="font-family : 微软雅黑;font-size: 16pt;font-weight: bold">
+{#{% for post in posts %}#}
+<a style="font-family : 微软雅黑;font-size: 12pt;letter-spacing: 2pt">
 {#    {{ post.title }}{{ post.slug }}#}
-    <a href="/post/{{ post.slug }}">{{ post.title }}{{ post.slug }}</a>
+{#    <a href="/post/{{ post.slug }}">{{ post.title }}{{ post.slug }}</a>#}
+    {{ post.body }}</a>
 </p>
 
 
 {#<p style="font-family: 微软雅黑;font-size: 10pt;letter-spacing: 1pt">#}
 {#{{ post.body }}#}
 {#</p>#}
-{% endfor %}
+{#{% endfor %}#}
 <hr>
-<h3>现在时刻：{{ now }}</h3>
+<h3><a href="/">回首页</a></h3>
 </body>
 </html>
