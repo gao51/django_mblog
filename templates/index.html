@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>欢迎光临我的博客</title>
-</head>
-<body>
-<h1>欢迎光临我的博客</h1>
-<hr>
-{#{{post_lists}}#}
+<!-- index.html -->
+{% extends 'base.html' %}
+{% block title %}欢迎光临我的博客{% endblock %}
+{% block headmessage %}
+    <a style="font-family: 楷体;">本站文章列表</a>
+{% endblock %}
+{% block content %}
 {% for post in posts %}
-<p style="font-family : 微软雅黑;font-size: 16pt;font-weight: bold">
-{#    {{ post.title }}{{ post.slug }}#}
-    <a href="/post/{{ post.slug }}">{{ post.title }}{{ post.slug }}</a>
-</p>
-
-
-{#<p style="font-family: 微软雅黑;font-size: 10pt;letter-spacing: 1pt">#}
-{#{{ post.body }}#}
-{#</p>#}
-{% endfor %}
-<hr>
-<h3>现在时刻：{{ now }}</h3>
-</body>
-</html>
+    <p style="font-family: 微软雅黑;font-size: 14pt;font-weight: bold;">
+    <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+        <a >{{ post.slug }}</a>
+    </p>
+    {% endfor %}
+{% endblock %}
